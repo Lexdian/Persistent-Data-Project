@@ -6,6 +6,7 @@ public class PersistentData : MonoBehaviour
 {
     public static PersistentData PD;
     public List<Score> ScoreBoard = new List<Score>();
+    public int Pontos;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +17,8 @@ public class PersistentData : MonoBehaviour
         }
         PD = this;
         DontDestroyOnLoad(gameObject);
+
+        ScoreBoard.Add(new Score { Name = "Carlos", Points = 12 });
     }
 
     // Update is called once per frame
@@ -26,8 +29,8 @@ public class PersistentData : MonoBehaviour
     [System.Serializable]
     public class Score
     {
-        string Name;
-        float Points;
+        public string Name;
+        public float Points;
     }
     public class SavedScores
     {
