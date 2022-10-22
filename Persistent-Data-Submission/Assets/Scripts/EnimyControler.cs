@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class EnimyControler : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public Vector2 Movement;
+    private Rigidbody2D RB;
     void Start()
     {
-        
+        RB = GetComponent<Rigidbody2D>();
+        Destroy(gameObject, 5f);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        RB.velocity = Movement * Time.deltaTime;
     }
 }
